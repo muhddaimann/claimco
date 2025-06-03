@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "template",
-    "slug": "template",
+    "name": "claimco",
+    "slug": "claimco",
     "version": "0.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",

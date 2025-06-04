@@ -1,4 +1,4 @@
-template/
+claimco/
 ├─ app/
 │  ├─ (tabs)/
 │  │  ├─ a/
@@ -54,3 +54,58 @@ template/
 │  ├─ useBottomNav.tsx
 │  └─ useToast.tsx
 
+📁 ClaimCo – Internal Expense Claim App for Tech Teams
+
+├─ 🎯 Needs & Goals
+│  ├─ Snap & auto-read receipts (OCR)
+│  ├─ Auto-fill claim forms
+│  ├─ Clear, auto-routed approval
+│  ├─ Claim status tracking
+│  └─ Centralized searchable history
+
+├─ 💡 ClaimCo – The App Solution
+│  ├─ Mobile-First Simplicity
+│  │   └─ Designed for staff like “Staff A” who claim on behalf of others
+│  └─ Tabs (Bottom Navigation)
+   ├─ 🏠 Home
+   │   ├─ 🔄 Recent Activity
+   │   │   └─ Latest submitted claims, approvals, and payments
+   │   ├─ 🧾 Pending Actions
+   │   │   └─ Claims needing edits, missing receipts, or awaiting your approval
+   │   └─ 💡 Tips & Reminders
+   │       └─ Daily submission tips, reminders for month-end deadlines
+
+   ├─ 📝 Claim
+   │   ├─ 📷 Receipt Scanner
+   │   │   └─ Snap a photo → OCR.space extracts: date, merchant, amount
+   │   ├─ ✏️ Auto-Filled Claim Form
+   │   │   └─ Fields: Date, Merchant, Amount, Tag (e.g., Travel, Tools)
+   │   ├─ 📤 Submit
+   │   │   └─ Auto-route to correct approver based on tag or department
+   │   └─ 📎 Attachments
+   │       └─ Upload supporting docs (invoice, approval email, etc.)
+
+   ├─ 📊 Track
+   │   ├─ ✅ Claim Status Tracker
+   │   │   └─ Stages: Submitted → In Review → Approved → Paid
+   │   ├─ 🔍 Filter & Search
+   │   │   └─ Filter by date, tag, status
+   │   ├─ 📁 View Submitted Claims
+   │   │   └─ Tap to view details or receipt image
+   │   └─ 🗃️ Export
+   │       └─ Download selected claims as PDF or CSV for reports
+
+   └─ ⚙️ Settings
+       ├─ 🔗 Google Drive Integration
+       │   └─ Store backup of receipts in user’s Drive
+       ├─ 🔔 Notification Preferences
+       │   └─ Toggle reminders, approval updates, rejected alerts
+       ├─ 💬 Support & Feedback
+       │   └─ Report bug, suggest feature, or ask for help
+       └─ 👤 Profile
+           └─ Update email, department, or preferred approver
+
+└─ 🔧 APIs & Tools Used
+   ├─ OCR.space – Text extraction from receipts
+   ├─ Google Drive API – Auto-upload & backup receipts
+   └─ Supabase – Auth, claim record storage, file URLs

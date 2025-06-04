@@ -99,7 +99,6 @@ export default function Settings() {
       </ScrollView>
 
       <TopFAB visible={showFab} scrollRef={scrollRef} />
-
       <LogoutFAB visible={showLogoutFab} />
     </>
   );

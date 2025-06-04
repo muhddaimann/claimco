@@ -27,7 +27,7 @@ function TabLayoutInner() {
             title: "Home",
             tabBarIcon: ({ color }) => (
               <MaterialCommunityIcons
-                name="home"
+                name="view-dashboard-outline"
                 color={color}
                 size={wp("6.5%")}
               />
@@ -37,10 +37,10 @@ function TabLayoutInner() {
         <Tabs.Screen
           name="b"
           options={{
-            title: "Dashboard",
+            title: "Claim",
             tabBarIcon: ({ color }) => (
               <MaterialCommunityIcons
-                name="desktop-mac-dashboard"
+                name="file-document-edit-outline"
                 color={color}
                 size={wp("6.5%")}
               />
@@ -50,10 +50,10 @@ function TabLayoutInner() {
         <Tabs.Screen
           name="c"
           options={{
-            title: "Reporting",
+            title: "Track",
             tabBarIcon: ({ color }) => (
               <MaterialCommunityIcons
-                name="chart-bar"
+                name="clipboard-list-outline"
                 color={color}
                 size={wp("6.5%")}
               />
@@ -63,10 +63,10 @@ function TabLayoutInner() {
         <Tabs.Screen
           name="d"
           options={{
-            title: "Profile",
+            title: "Settings",
             tabBarIcon: ({ color }) => (
               <MaterialCommunityIcons
-                name="face-agent"
+                name="cog-outline"
                 color={color}
                 size={wp("6.5%")}
               />

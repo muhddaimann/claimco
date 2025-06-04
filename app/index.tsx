@@ -38,7 +38,7 @@ export default function Index() {
         useNativeDriver: true,
       }),
     ]).start();
-  }, [fadeAnim, translateY]);
+  }, []);
 
   const handleLogin = async () => {
     if (!username.trim() || !password.trim()) {
@@ -54,29 +54,48 @@ export default function Index() {
 
   return (
     <KeyboardAvoidingView
-      style={{ flex: 1, backgroundColor: theme.colors.surface }}
+      style={{ flex: 1, backgroundColor: theme.colors.background }}
       behavior="padding"
     >
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <SafeAreaView style={styles.container}>
           <Animated.View
             style={[
-              styles.content,
+              styles.card,
               {
+                backgroundColor: theme.colors.surface,
+                shadowColor: theme.colors.shadow,
                 opacity: fadeAnim,
                 transform: [{ translateY }],
               },
             ]}
           >
             <MaterialCommunityIcons
-              name="login"
-              size={wp("18%")}
+              name="file-document-outline"
+              size={wp("14%")}
               color={theme.colors.primary}
-              style={styles.icon}
+              style={{ alignSelf: "center", marginBottom: wp("5%") }}
             />
 
-            <Text style={[styles.title, { color: theme.colors.onSurface }]}>
-              Welcome
+            <Text
+              style={[
+                styles.title,
+                {
+                  color: theme.colors.onSurface,
+                },
+              ]}
+            >
+              ClaimCo
+            </Text>
+            <Text
+              style={[
+                styles.subtitle,
+                {
+                  color: theme.colors.onSurfaceVariant,
+                },
+              ]}
+            >
+              Scan & Submit Claims Easily
             </Text>
 
             <TextInput
@@ -113,37 +132,42 @@ export default function Index() {
 }
 
 const styles = StyleSheet.create({
-  wrapper: {
-    flex: 1,
-  },
   container: {
     flex: 1,
     justifyContent: "center",
     paddingHorizontal: wp("6%"),
-    backgroundColor: "transparent",
   },
-  content: {
-    alignItems: "center",
-  },
-  icon: {
-    marginBottom: wp("4%"),
+  card: {
+    borderRadius: wp("4%"),
+    paddingVertical: wp("6%"),
+    paddingHorizontal: wp("8%"),
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 1,
+    elevation: 2,
   },
   title: {
-    fontSize: wp("5.2%"),
-    fontWeight: "500",
-    marginBottom: wp("5%"),
+    fontSize: wp("5%"),
+    fontWeight: "700",
+    textAlign: "center",
+    marginBottom: wp("1%"),
+  },
+  subtitle: {
+    fontSize: wp("3.6%"),
+    fontWeight: "400",
+    textAlign: "center",
+    marginBottom: wp("6%"),
   },
   input: {
     width: "100%",
-    marginBottom: wp("3.5%"),
+    marginBottom: wp("4%"),
   },
   button: {
-    borderRadius: wp("10%"),
-    marginTop: wp("2%"),
+    borderRadius: wp("2.5%"),
     width: "100%",
   },
   buttonContent: {
-    paddingVertical: wp("2%"),
+    paddingVertical: wp("2.8%"),
   },
   buttonLabel: {
     fontSize: wp("4%"),

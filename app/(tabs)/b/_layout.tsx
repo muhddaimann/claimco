@@ -7,17 +7,24 @@ export default function LayoutB() {
   return (
     <Stack
       screenOptions={{
-        headerShown: false,
         headerStyle: {
           backgroundColor: theme.colors.surface,
         },
-        headerTintColor: theme.colors.surface,
+        headerTintColor: theme.colors.onSurface,
         headerShadowVisible: false,
       }}
     >
       <Stack.Screen
         name="index"
         options={{
+          headerShown: false,
+          title: "",
+        }}
+      />
+      <Stack.Screen
+        name="claimForm"
+        options={{
+          headerShown: true,
           title: "",
         }}
       />

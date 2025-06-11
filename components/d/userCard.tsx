@@ -47,16 +47,15 @@ export default function UserCard() {
 const styles = StyleSheet.create({
   card: {
     width: "100%",
-    height: wp("25%"),
     borderBottomLeftRadius: wp("4%"),
     borderBottomRightRadius: wp("4%"),
-    marginBottom: wp("3%"),
+    paddingVertical: wp("4%"),
+    paddingHorizontal: wp("4%"),
+    justifyContent: "center",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 1,
     elevation: 2,
-    paddingHorizontal: wp("4%"),
-    justifyContent: "center",
   },
   row: {
     flexDirection: "row",

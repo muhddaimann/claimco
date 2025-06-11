@@ -1,111 +1,72 @@
-claimco/
-├─ app/
-│  ├─ (tabs)/
-│  │  ├─ a/
-│  │  │  ├─ _layout.tsx
-│  │  │  └─ index.tsx
-│  │  ├─ b/
-│  │  │  ├─ _layout.tsx
-│  │  │  └─ index.tsx
-│  │  ├─ c/
-│  │  │  ├─ _layout.tsx
-│  │  │  └─ index.tsx
-│  │  ├─ d/
-│  │  │  ├─ _layout.tsx
-│  │  │  └─ index.tsx
-│  │  └─ _layout.tsx
-│  ├─ _layout.tsx
-│  ├─ goodbye.tsx
-│  ├─ index.tsx
-│  └─ welcome.tsx
-├─ assets/
-│  ├─ fonts/
-│  │  └─ SpaceMono-Regular.ttf
-│  └─ images/
-│     ├─ favicon.png
-│     ├─ icon.png
-│     └─ splash.png
-├─ components/
-│  ├─ a/
-│  │  └─ userCard.tsx
-│  ├─ b/
-│  │  └─ userCard.tsx
-│  ├─ c/
-│  │  └─ userCard.tsx
-│  ├─ d/
-│  │  └─ userCard.tsx
-│  ├─ bottomNav.tsx
-│  ├─ logoutFAB.tsx
-│  ├─ sectionHeader.tsx
-│  ├─ skeletonLoad.tsx
-│  ├─ toastBar.tsx
-│  └─ topFAB.tsx
-├─ constants/
-│  ├─ color.ts
-│  └─ theme.ts
-├─ contexts/
-│  ├─ api/
-│  │  └─ api.tsx
-│  ├─ authContext.tsx
-│  ├─ bottomContext.tsx
-│  ├─ themeContext.tsx
-│  └─ tokenContext.tsx
-├─ hooks/
-│  ├─ useBottomNav.tsx
-│  └─ useToast.tsx
-
-📁 ClaimCo – Internal Expense Claim App for Tech Teams
-
-├─ 🎯 Needs & Goals
-│  ├─ Snap & auto-read receipts (OCR)
-│  ├─ Auto-fill claim forms
-│  ├─ Clear, auto-routed approval
-│  ├─ Claim status tracking
-│  └─ Centralized searchable history
-
-├─ 💡 ClaimCo – The App Solution
-│  ├─ Mobile-First Simplicity
-│  │   └─ Designed for staff like “Staff A” who claim on behalf of others
-│  └─ Tabs (Bottom Navigation)
-   ├─ 🏠 Home
-   │   ├─ 🔄 Recent Activity
-   │   │   └─ Latest submitted claims, approvals, and payments
-   │   ├─ 🧾 Pending Actions
-   │   │   └─ Claims needing edits, missing receipts, or awaiting your approval
-   │   └─ 💡 Tips & Reminders
-   │       └─ Daily submission tips, reminders for month-end deadlines
-
-   ├─ 📝 Claim
-   │   ├─ 📷 Receipt Scanner
-   │   │   └─ Snap a photo → OCR.space extracts: date, merchant, amount
-   │   ├─ ✏️ Auto-Filled Claim Form
-   │   │   └─ Fields: Date, Merchant, Amount, Tag (e.g., Travel, Tools)
-   │   ├─ 📤 Submit
-   │   │   └─ Auto-route to correct approver based on tag or department
-   │   └─ 📎 Attachments
-   │       └─ Upload supporting docs (invoice, approval email, etc.)
-
-   ├─ 📊 Track
-   │   ├─ ✅ Claim Status Tracker
-   │   │   └─ Stages: Submitted → In Review → Approved → Paid
-   │   ├─ 🔍 Filter & Search
-   │   │   └─ Filter by date, tag, status
-   │   ├─ 📁 View Submitted Claims
-   │   │   └─ Tap to view details or receipt image
-   │   └─ 🗃️ Export
-   │       └─ Download selected claims as PDF or CSV for reports
-
-   └─ ⚙️ Settings
-       ├─ 🔗 Google Drive Integration
-       │   └─ Store backup of receipts in user’s Drive
-       ├─ 🔔 Notification Preferences
-       │   └─ Toggle reminders, approval updates, rejected alerts
-       ├─ 💬 Support & Feedback
-       │   └─ Report bug, suggest feature, or ask for help
-       └─ 👤 Profile
-           └─ Update email, department, or preferred approver
-
-└─ 🔧 APIs & Tools Used
-   ├─ OCR.space – Text extraction from receipts
-   ├─ Google Drive API – Auto-upload & backup receipts
-   └─ Supabase – Auth, claim record storage, file URLs
+ClaimCo
+├─ Tabs
+├─ Home
+│   ├─ Daily Summary
+│   │   ├─ Shows pending, submitted, and approved claims for the day
+│   │   ├─ Alerts for missing receipts or upcoming deadlines
+│   │   └─ Quick link to add new claim
+│   │
+│   ├─ Claim Insights
+│   │   ├─ Weekly and monthly expense summary (by tag/project)
+│   │   ├─ Pie chart of category breakdown (e.g. travel, meals, tools)
+│   │   └─ Claim limits or policy reminders
+│   │
+│   ├─ Smart Notifications
+│   │   ├─ Nudges for unsubmitted drafts or rejected claims
+│   │   └─ Reminder for end-of-month wrap-up
+│   │
+│   └─ Tips & Resources
+│       ├─ Guide on claim policy, document requirements
+│       └─ Submission tips (e.g., preferred formats, max limits)
+├─ Claim
+│   ├─ Receipt Scanner
+│   │   ├─ Snap photo or upload file
+│   │   └─ Use OCR to extract date, merchant, amount
+│   │
+│   ├─ Claim Form
+│   │   ├─ Auto-filled from OCR, manually editable
+│   │   ├─ Fields: date, merchant, category, amount, remarks, tag
+│   │   └─ Upload supporting files (invoice, email, doc ID)
+│   │
+│   ├─ Submit Claim
+│   │   ├─ Select approver (auto-routed by tag or department)
+│   │   └─ Confirmation and soft copy summary
+│   │
+│   └─ Claim Drafts
+│       ├─ Save incomplete claims
+│       └─ Resume or discard later
+│
+├─ Track
+│   ├─ Claim Timeline
+│   │   ├─ Status flow: Submitted → In Review → Approved → Paid
+│   │   └─ Visual indicator for each stage and last update timestamp
+│   │
+│   ├─ Filter & Search
+│   │   ├─ Filter by tag, date range, status
+│   │   └─ Quick search by merchant or keyword
+│   │
+│   ├─ View Claim Details
+│   │   ├─ Receipt preview, notes, attached files
+│   │   └─ Who approved, when, any comments
+│   │
+│   └─ Export
+│       ├─ Generate PDF or CSV summary for selected claims
+│       └─ Email/export to finance or personal records
+│
+├─ Profile
+│   ├─ Personal Info
+│   │   ├─ Name, department, contact details
+│   │   └─ Preferred approver or cost center
+│   │
+│   ├─ Claim Settings
+│   │   ├─ Set default tags, default remarks
+│   │   └─ Enable/disable OCR auto-fill
+│   │
+│   ├─ Integrations
+│   │   ├─ Connect Google Drive for receipt storage
+│   │   └─ Auto-sync submitted claims to Google Sheet
+│   │
+│   └─ Help and Support
+│       ├─ FAQ and claim policy docs
+│       ├─ Report issue or contact finance
+│       └─ Feedback and improvement suggestions

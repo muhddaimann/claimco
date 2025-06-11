@@ -5,7 +5,7 @@ import { useTabVisibility } from "@/contexts/bottomContext";
 import { useToggle } from "@/contexts/themeContext";
 import { useScrollDirection } from "@/hooks/useBottomNav";
 import React, { useEffect, useRef, useState } from "react";
-import { ScrollView, StyleSheet } from "react-native";
+import { Platform, ScrollView, StyleSheet } from "react-native";
 import { List, Switch, useTheme } from "react-native-paper";
 import { widthPercentageToDP as wp } from "react-native-responsive-screen";
 
@@ -96,6 +96,44 @@ export default function Settings() {
             right={() => <Switch value={false} onValueChange={() => {}} />}
           />
         </List.Section>
+
+        <List.Section>
+          <List.Subheader
+            style={{
+              color: theme.colors.onSurface,
+              fontSize: wp("4.5%"),
+              fontWeight: "600",
+            }}
+          >
+            Support & Feedback
+          </List.Subheader>
+          <List.Item
+            title="Help Center"
+            left={(props) => (
+              <List.Icon {...props} icon="help-circle-outline" />
+            )}
+            onPress={() => {}}
+          />
+          <List.Item
+            title="Send Feedback"
+            left={(props) => (
+              <List.Icon {...props} icon="message-text-outline" />
+            )}
+            onPress={() => {}}
+          />
+          <List.Item
+            title="Report a Bug"
+            left={(props) => <List.Icon {...props} icon="bug-outline" />}
+            onPress={() => {}}
+          />
+          <List.Item
+            title="About This App"
+            left={(props) => (
+              <List.Icon {...props} icon="information-outline" />
+            )}
+            onPress={() => {}}
+          />
+        </List.Section>
       </ScrollView>
 
       <TopFAB visible={showFab} scrollRef={scrollRef} />
@@ -109,6 +147,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   contentContainer: {
-    paddingBottom: wp("10%"),
+    paddingBottom: Platform.OS === "android" ? wp("20%") : wp("26%"),
   },
 });

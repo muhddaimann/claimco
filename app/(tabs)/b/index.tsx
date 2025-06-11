@@ -1,4 +1,5 @@
 import ClaimModal from "@/components/b/claimModal";
+import ClaimPage from "@/components/b/claimPage";
 import UserCard from "@/components/b/userCard";
 import ClaimFAB from "@/components/claimFAB";
 import TopFAB from "@/components/topFAB";
@@ -6,7 +7,7 @@ import { useTabVisibility } from "@/contexts/bottomContext";
 import { useScrollDirection } from "@/hooks/useBottomNav";
 import { useRouter } from "expo-router";
 import React, { useEffect, useRef, useState } from "react";
-import { ScrollView, StyleSheet, View } from "react-native";
+import { Platform, ScrollView, StyleSheet, View } from "react-native";
 import { useTheme } from "react-native-paper";
 import { widthPercentageToDP as wp } from "react-native-responsive-screen";
 
@@ -47,15 +48,7 @@ export default function Claim() {
       >
         <UserCard />
         <View style={styles.body}>
-          <View
-            style={[
-              styles.card,
-              {
-                backgroundColor: theme.colors.surface,
-                shadowColor: theme.colors.shadow,
-              },
-            ]}
-          ></View>
+          <ClaimPage />
         </View>
       </ScrollView>
 
@@ -88,19 +81,11 @@ export default function Claim() {
 const styles = StyleSheet.create({
   container: {
     alignItems: "center",
-    paddingBottom: wp("10%"),
+    paddingBottom: Platform.OS === "android" ? wp("10%") : wp("26%"),
   },
   body: {
     width: "100%",
     paddingHorizontal: wp("4%"),
     gap: wp("2%"),
-  },
-  card: {
-    height: wp("250%"),
-    borderRadius: wp("4%"),
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 1,
-    elevation: 2,
   },
 });
